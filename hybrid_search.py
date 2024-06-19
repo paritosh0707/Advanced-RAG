@@ -199,5 +199,9 @@ if __name__ == "__main__":
     normal_chain, hybrid_chain = create_qa_chains(llm, vectorstore.as_retriever(), ensemble_retriever)
 
     # Example usage
-    response = hybrid_chain.invoke("What is Abstractive Question Answering?")
-    print(response)
+    normal_response = normal_chain.invoke("Ask the question based out of PDF data")
+    print(normal_response)
+    
+    # Example usage
+    hybrid_response = hybrid_chain.invoke("Ask the question based out of PDF data")
+    print(hybrid_response)
